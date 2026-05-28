@@ -8,14 +8,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- PÁGINA DE REGISTRO -->
-    <div id="registroPage" class="page active">
-        <div class="registro-container">
-            <div class="registro-box">
+    <!-- PÁGINA DE LOGIN -->
+    <div id="loginPage" class="page active">
+        <div class="auth-container">
+            <div class="auth-box">
                 <div class="logo-section">
                     <i class="fas fa-diamond logo-icon"></i>
                     <h1>Minevertex</h1>
                     <p>Plataforma de Inversión Digital</p>
+                </div>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="loginCorreo">Correo Electrónico</label>
+                        <input type="email" id="loginCorreo" name="loginCorreo" required placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required placeholder="Tu contraseña">
+                    </div>
+
+                    <button type="submit" class="btn-login">Iniciar Sesión</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>¿No tienes cuenta?</span>
+                </div>
+
+                <p class="register-link">
+                    <button type="button" class="btn-register-link" onclick="mostrarRegistro()">
+                        <i class="fas fa-plus-circle"></i> Crear Cuenta
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA DE REGISTRO -->
+    <div id="registroPage" class="page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <div class="logo-section">
+                    <i class="fas fa-diamond logo-icon"></i>
+                    <h1>Minevertex</h1>
+                    <p>Crear Nueva Cuenta</p>
                 </div>
 
                 <form id="registroForm" class="registro-form">
@@ -41,6 +78,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required placeholder="Crea una contraseña segura">
+                    </div>
+
+                    <div class="form-group">
                         <label for="telefono">Teléfono</label>
                         <input type="tel" id="telefono" name="telefono" required placeholder="+1 234 567 8900">
                     </div>
@@ -48,7 +90,10 @@
                     <button type="submit" class="btn-registro">Registrarse</button>
                 </form>
 
-                <p class="login-link">¿Ya tienes cuenta? <a href="#" onclick="mostrarLogin()">Inicia sesión</a></p>
+                <p class="login-link">
+                    ¿Ya tienes cuenta? 
+                    <button type="button" class="btn-login-link" onclick="mostrarLogin()">Inicia sesión</button>
+                </p>
             </div>
         </div>
     </div>
