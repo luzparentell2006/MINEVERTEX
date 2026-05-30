@@ -2,10 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MINERVERTEX">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="description" content="MINERVERTEX - Plataforma de Minería Digital y Inversión Descentralizada">
+    <meta name="author" content="MINERVERTEX">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="MINERVERTEX">
+    <meta property="og:description" content="Plataforma de Minería Digital">
+    <meta property="og:type" content="website">
     <title>MINERVERTEX - Plataforma de Minería Digital</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
     <!-- SECCIÓN DE REGISTRO -->
@@ -107,8 +120,8 @@
                         <img src="https://via.placeholder.com/800x300/45B7D1/FFFFFF?text=Promoción+3" alt="Promoción 3">
                         <img src="https://via.placeholder.com/800x300/FFA07A/FFFFFF?text=Promoción+4" alt="Promoción 4">
                     </div>
-                    <button class="carrusel-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="carrusel-next"><i class="fas fa-chevron-right"></i></button>
+                    <button class="carrusel-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carrusel-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
                 </div>
 
                 <!-- SALA DE PROYECTOS -->
@@ -164,17 +177,17 @@
                     <h2>Mi Equipo</h2>
                     <div class="estadisticas-equipo">
                         <div class="stat-card">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-users" aria-hidden="true"></i>
                             <span class="stat-label">Referidos Directos</span>
                             <span class="stat-valor">0</span>
                         </div>
                         <div class="stat-card">
-                            <i class="fas fa-sitemap"></i>
+                            <i class="fas fa-sitemap" aria-hidden="true"></i>
                             <span class="stat-label">Red Total</span>
                             <span class="stat-valor">0</span>
                         </div>
                         <div class="stat-card">
-                            <i class="fas fa-coins"></i>
+                            <i class="fas fa-coins" aria-hidden="true"></i>
                             <span class="stat-label">Ganancias por Referidos</span>
                             <span class="stat-valor">0.00 USDT</span>
                         </div>
@@ -220,37 +233,37 @@
         </main>
 
         <!-- NAVEGACIÓN INFERIOR -->
-        <nav class="nav-bottom">
-            <button class="nav-item active" data-nav="hogar">
-                <i class="fas fa-home"></i>
+        <nav class="nav-bottom" role="navigation" aria-label="Navegación principal">
+            <button class="nav-item active" data-nav="hogar" aria-label="Ir a Hogar">
+                <i class="fas fa-home" aria-hidden="true"></i>
                 <span>Hogar</span>
             </button>
-            <button class="nav-item" data-nav="proyecto">
-                <i class="fas fa-project-diagram"></i>
+            <button class="nav-item" data-nav="proyecto" aria-label="Ir a Proyectos">
+                <i class="fas fa-project-diagram" aria-hidden="true"></i>
                 <span>Proyecto</span>
             </button>
-            <button class="nav-item" data-nav="equipo">
-                <i class="fas fa-users"></i>
+            <button class="nav-item" data-nav="equipo" aria-label="Ir a Equipo">
+                <i class="fas fa-users" aria-hidden="true"></i>
                 <span>Equipo</span>
             </button>
-            <button class="nav-item" data-nav="ami">
-                <i class="fas fa-user"></i>
+            <button class="nav-item" data-nav="ami" aria-label="Ir a Mi Perfil">
+                <i class="fas fa-user" aria-hidden="true"></i>
                 <span>A mi</span>
             </button>
         </nav>
 
         <!-- MODALES -->
         <!-- MODAL RECARGA -->
-        <div id="modal-recarga" class="modal">
+        <div id="modal-recarga" class="modal" role="dialog" aria-labelledby="modal-recarga-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Cargar Fondos</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-recarga-title">Cargar Fondos</h2>
                 <div class="recarga-content">
                     <p class="instruccion">Envía fondos a la siguiente dirección de billetera:</p>
                     <div class="direccion-wallet">
                         <code id="direccion-recarga">0x742d35Cc6634C0532925a3b844Bc9e7595f42e1</code>
-                        <button class="btn-copiar" onclick="copiarTexto('direccion-recarga')">
-                            <i class="fas fa-copy"></i> Copiar
+                        <button class="btn-copiar" onclick="copiarTexto('direccion-recarga')" aria-label="Copiar dirección">
+                            <i class="fas fa-copy" aria-hidden="true"></i> Copiar
                         </button>
                     </div>
                     <p class="red-info">Red: Binance Smart Chain (BSC)</p>
@@ -260,18 +273,18 @@
         </div>
 
         <!-- MODAL RETIRAR -->
-        <div id="modal-retirar" class="modal">
+        <div id="modal-retirar" class="modal" role="dialog" aria-labelledby="modal-retirar-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Retirar Fondos</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-retirar-title">Retirar Fondos</h2>
                 <div class="retirar-content">
                     <div class="form-group">
                         <label for="cantidad-retiro">Cantidad a Retirar (USDT)</label>
-                        <input type="number" id="cantidad-retiro" min="10" max="1000" step="0.01">
+                        <input type="number" id="cantidad-retiro" min="10" max="1000" step="0.01" aria-required="true">
                     </div>
                     <div class="form-group">
                         <label for="wallet-retiro">Dirección de Billetera</label>
-                        <input type="text" id="wallet-retiro" placeholder="0x...">
+                        <input type="text" id="wallet-retiro" placeholder="0x..." aria-required="true">
                     </div>
                     <button class="btn-retirar">Solicitar Retiro</button>
                 </div>
@@ -279,14 +292,14 @@
         </div>
 
         <!-- MODAL APLICACIÓN -->
-        <div id="modal-aplicacion" class="modal">
+        <div id="modal-aplicacion" class="modal" role="dialog" aria-labelledby="modal-app-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Descargar Aplicación</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-app-title">Descargar Aplicación</h2>
                 <div class="aplicacion-content">
                     <p>Guarda esta página como aplicación en tu dispositivo</p>
                     <button class="btn-instalar-app">
-                        <i class="fas fa-download"></i> Instalar Aplicación
+                        <i class="fas fa-download" aria-hidden="true"></i> Instalar Aplicación
                     </button>
                     <p class="info-app">Acceso rápido desde tu pantalla de inicio</p>
                 </div>
@@ -294,10 +307,10 @@
         </div>
 
         <!-- MODAL PERFIL EMPRESA -->
-        <div id="modal-perfil-empresa" class="modal">
+        <div id="modal-perfil-empresa" class="modal" role="dialog" aria-labelledby="modal-empresa-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Perfil de la Empresa</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-empresa-title">Perfil de la Empresa</h2>
                 <div class="perfil-empresa-content">
                     <div class="empresa-info">
                         <h3>MINERVERTEX</h3>
@@ -308,32 +321,32 @@
                     </div>
                     <div class="empresa-contacto">
                         <h4>Contacto</h4>
-                        <p><i class="fas fa-envelope"></i> info@minervertex.com</p>
-                        <p><i class="fas fa-phone"></i> +1234567890</p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> info@minervertex.com</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> +1234567890</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- MODAL INVITAR AMIGOS -->
-        <div id="modal-invitar" class="modal">
+        <div id="modal-invitar" class="modal" role="dialog" aria-labelledby="modal-referral-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Invitar Amigos</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-referral-title">Invitar Amigos</h2>
                 <div class="invitar-content">
                     <p>Comparte tu código de referencia y gana 5% de comisión</p>
                     <div class="codigo-referencia">
                         <div class="codigo-display">
                             <code id="codigo-referencia">REF-</code>
-                            <button class="btn-copiar" onclick="copiarTexto('codigo-referencia')">
-                                <i class="fas fa-copy"></i> Copiar Código
+                            <button class="btn-copiar" onclick="copiarTexto('codigo-referencia')" aria-label="Copiar código de referencia">
+                                <i class="fas fa-copy" aria-hidden="true"></i> Copiar Código
                             </button>
                         </div>
                     </div>
                     <div class="enlace-referencia">
-                        <input type="text" id="enlace-referencia" readonly>
-                        <button class="btn-copiar" onclick="copiarTexto('enlace-referencia')">
-                            <i class="fas fa-copy"></i> Copiar Enlace
+                        <input type="text" id="enlace-referencia" readonly aria-label="Enlace de referencia">
+                        <button class="btn-copiar" onclick="copiarTexto('enlace-referencia')" aria-label="Copiar enlace de referencia">
+                            <i class="fas fa-copy" aria-hidden="true"></i> Copiar Enlace
                         </button>
                     </div>
                     <p class="info-referencia">Comparte este enlace con tus amigos y ambos recibirán bonificaciones</p>
@@ -342,25 +355,25 @@
         </div>
 
         <!-- MODAL COOPERACIÓN -->
-        <div id="modal-cooperacion" class="modal">
+        <div id="modal-cooperacion" class="modal" role="dialog" aria-labelledby="modal-coop-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Cooperación Entre Agencias</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-coop-title">Cooperación Entre Agencias</h2>
                 <div class="cooperacion-content">
                     <p>Únete a nuestra red de cooperación global</p>
                     <div class="beneficios-cooperacion">
                         <div class="beneficio-card">
-                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-globe" aria-hidden="true"></i>
                             <h4>Alcance Global</h4>
                             <p>Conecta con socios en todo el mundo</p>
                         </div>
                         <div class="beneficio-card">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
                             <h4>Crecimiento Mutuo</h4>
                             <p>Aumenta tus ganancias colaborando</p>
                         </div>
                         <div class="beneficio-card">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             <h4>Seguro</h4>
                             <p>Transacciones verificadas y seguras</p>
                         </div>
@@ -371,14 +384,14 @@
         </div>
 
         <!-- MODAL INVERTIR -->
-        <div id="modal-invertir" class="modal">
+        <div id="modal-invertir" class="modal" role="dialog" aria-labelledby="modal-invert-title">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Realizar Inversión</h2>
+                <button class="close" aria-label="Cerrar diálogo">&times;</button>
+                <h2 id="modal-invert-title">Realizar Inversión</h2>
                 <div class="invertir-content">
                     <div class="form-group">
                         <label for="cantidad-inversion">Cantidad a Invertir (USDT)</label>
-                        <input type="number" id="cantidad-inversion" min="50" step="10" value="50">
+                        <input type="number" id="cantidad-inversion" min="50" step="10" value="50" aria-required="true">
                         <small>Mínimo 50 USDT</small>
                     </div>
                     <div class="resumen-inversion">
