@@ -3,462 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minevertex - Plataforma de Inversión</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MINERVERTEX - Plataforma de Minería Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- PÁGINA DE LOGIN -->
-    <div id="loginPage" class="page active">
-        <div class="auth-container">
-            <div class="auth-box">
-                <div class="logo-section">
-                    <i class="fas fa-diamond logo-icon"></i>
-                    <h1>Minevertex</h1>
-                    <p>Plataforma de Inversión Digital</p>
-                </div>
-
-                <form id="loginForm" class="login-form">
-                    <div class="form-group">
-                        <label for="loginCorreo">Correo Electrónico</label>
-                        <input type="email" id="loginCorreo" name="loginCorreo" required placeholder="tu@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="loginPassword">Contraseña</label>
-                        <input type="password" id="loginPassword" name="loginPassword" required placeholder="Tu contraseña">
-                    </div>
-
-                    <button type="submit" class="btn-login">Iniciar Sesión</button>
-                </form>
-
-                <div class="auth-divider">
-                    <span>¿No tienes cuenta?</span>
-                </div>
-
-                <p class="register-link">
-                    <button type="button" class="btn-register-link" onclick="mostrarRegistro()">
-                        <i class="fas fa-plus-circle"></i> Crear Cuenta
-                    </button>
-                </p>
+    <!-- SECCIÓN DE REGISTRO -->
+    <div id="registro-container" class="container-registro">
+        <div class="form-registro">
+            <div class="logo-registro">
+                <h1>MINERVERTEX</h1>
+                <p>Plataforma de Minería Digital</p>
             </div>
+            <form id="formulario-registro">
+                <div class="form-group">
+                    <label for="documento">Número de Documento</label>
+                    <input type="text" id="documento" name="documento" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <button type="submit" class="btn-registro">Crear Cuenta</button>
+            </form>
         </div>
     </div>
 
-    <!-- PÁGINA DE REGISTRO -->
-    <div id="registroPage" class="page">
-        <div class="auth-container">
-            <div class="auth-box">
-                <div class="logo-section">
-                    <i class="fas fa-diamond logo-icon"></i>
-                    <h1>Minevertex</h1>
-                    <p>Crear Nueva Cuenta</p>
-                </div>
-
-                <form id="registroForm" class="registro-form">
-                    <div class="form-group">
-                        <label for="documento">Número de Documento</label>
-                        <input type="text" id="documento" name="documento" required placeholder="Ej: 12345678">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="correo">Correo Electrónico</label>
-                        <input type="email" id="correo" name="correo" required placeholder="tu@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id="password" name="password" required placeholder="Crea una contraseña segura">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="+1 234 567 8900">
-                    </div>
-
-                    <button type="submit" class="btn-registro">Registrarse</button>
-                </form>
-
-                <p class="login-link">
-                    ¿Ya tienes cuenta? 
-                    <button type="button" class="btn-login-link" onclick="mostrarLogin()">Inicia sesión</button>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- PÁGINA PRINCIPAL - HOGAR -->
-    <div id="hogarPage" class="page">
+    <!-- INTERFAZ PRINCIPAL - HOGAR -->
+    <div id="app-container" class="app-container hidden">
         <!-- HEADER -->
         <header class="header">
             <div class="header-left">
-                <h2 class="page-title">Minevertex</h2>
+                <h1 class="app-title">MINERVERTEX</h1>
             </div>
             <div class="header-right">
-                <button class="icon-btn" onclick="abrirNotificaciones()">
+                <div class="notificaciones">
                     <i class="fas fa-bell"></i>
-                    <span class="notification-badge">3</span>
-                </button>
-                <button class="icon-btn" onclick="abrirCorreos()">
-                    <i class="fas fa-envelope"></i>
-                    <span class="notification-badge">2</span>
-                </button>
+                    <span class="notificacion-badge">3</span>
+                </div>
+                <div class="correo-usdt">
+                    <div class="correo-display">
+                        <i class="fas fa-envelope"></i>
+                        <span id="correo-display" class="correo-text">usuario@email.com</span>
+                    </div>
+                    <div class="usdt-display">
+                        <span class="usdt-label">Saldo USDT</span>
+                        <span id="saldo-usdt" class="usdt-amount">500.00</span>
+                    </div>
+                </div>
             </div>
         </header>
 
         <!-- CONTENIDO PRINCIPAL -->
         <main class="main-content">
-            <!-- SALDO ACTUAL -->
-            <div class="balance-card">
-                <div class="balance-info">
-                    <p class="balance-label">Saldo Actual</p>
-                    <h3 class="balance-amount" id="saldoUsuario">0.00 USDT</h3>
-                </div>
-                <div class="balance-chart">
-                    <canvas id="balanceChart" width="100" height="60"></canvas>
-                </div>
-            </div>
-
-            <!-- 6 OPCIONES CIRCULARES -->
-            <div class="opciones-container">
-                <div class="opcion-circular" onclick="abrirRecarga()">
-                    <i class="fas fa-arrow-down"></i>
-                    <p>Recarga</p>
-                </div>
-
-                <div class="opcion-circular" onclick="abrirRetirar()">
-                    <i class="fas fa-arrow-up"></i>
-                    <p>Retirar</p>
-                </div>
-
-                <div class="opcion-circular" onclick="descargarApp()">
-                    <i class="fas fa-download"></i>
-                    <p>Aplicación</p>
-                </div>
-
-                <div class="opcion-circular" onclick="abrirEmpresa()">
-                    <i class="fas fa-building"></i>
-                    <p>Perfil Empresa</p>
-                </div>
-
-                <div class="opcion-circular" onclick="abrirReferral()">
-                    <i class="fas fa-link"></i>
-                    <p>Invitar Amigos</p>
-                </div>
-
-                <div class="opcion-circular" onclick="abrirCooperacion()">
-                    <i class="fas fa-handshake"></i>
-                    <p>Cooperación</p>
-                </div>
-            </div>
-
-            <!-- CARRUSEL DE IMÁGENES -->
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-item active">
-                        <img src="https://via.placeholder.com/800x300/1e3a8a/00bcd4?text=Inversión+Segura" alt="Slide 1">
+            <!-- SECCIÓN HOGAR -->
+            <section id="seccion-hogar" class="seccion-activa">
+                <div class="opciones-circulares">
+                    <div class="opcion-circular" data-opcion="recarga">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Recarga</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/800x300/1e3a8a/00bcd4?text=Ganancias+Garantizadas" alt="Slide 2">
+                    <div class="opcion-circular" data-opcion="retirar">
+                        <i class="fas fa-arrow-up"></i>
+                        <p>Retirar</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/800x300/1e3a8a/00bcd4?text=Comunidad+Global" alt="Slide 3">
+                    <div class="opcion-circular" data-opcion="aplicacion">
+                        <i class="fas fa-download"></i>
+                        <p>Aplicación</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/800x300/1e3a8a/00bcd4?text=Soporte+24/7" alt="Slide 4">
+                    <div class="opcion-circular" data-opcion="perfil-empresa">
+                        <i class="fas fa-building"></i>
+                        <p>Perfil Empresa</p>
+                    </div>
+                    <div class="opcion-circular" data-opcion="invitar">
+                        <i class="fas fa-share-alt"></i>
+                        <p>Invitar Amigos</p>
+                    </div>
+                    <div class="opcion-circular" data-opcion="cooperacion">
+                        <i class="fas fa-handshake"></i>
+                        <p>Cooperación</p>
                     </div>
                 </div>
-                <button class="carousel-nav prev" onclick="carouselPrev()">&#10094;</button>
-                <button class="carousel-nav next" onclick="carouselNext()">&#10095;</button>
-            </div>
 
-            <!-- SALA DE PROYECTOS -->
-            <section class="sala-proyectos">
-                <h3 class="section-title">Sala De Proyectos</h3>
-                
-                <div class="proyectos-grid">
-                    <div class="proyecto-card">
-                        <div class="proyecto-header">
-                            <h4>Proyecto Oro</h4>
-                            <span class="proyecto-badge">Activo</span>
-                        </div>
-                        <div class="proyecto-info">
-                            <div class="info-row">
-                                <span class="label">Inversión Mínima:</span>
-                                <span class="value">100 USDT</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Ganancia Esperada:</span>
-                                <span class="value gain">+15%</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Duración:</span>
-                                <span class="value">30 días</span>
-                            </div>
-                        </div>
-                        <button class="btn-invertir" onclick="invertir('Oro', 100)">Invertir Ahora</button>
+                <!-- CARRUSEL DE IMÁGENES -->
+                <div class="carrusel-container">
+                    <div class="carrusel">
+                        <img src="https://via.placeholder.com/800x300/FF6B6B/FFFFFF?text=Promoción+1" alt="Promoción 1">
+                        <img src="https://via.placeholder.com/800x300/4ECDC4/FFFFFF?text=Promoción+2" alt="Promoción 2">
+                        <img src="https://via.placeholder.com/800x300/45B7D1/FFFFFF?text=Promoción+3" alt="Promoción 3">
+                        <img src="https://via.placeholder.com/800x300/FFA07A/FFFFFF?text=Promoción+4" alt="Promoción 4">
                     </div>
+                    <button class="carrusel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carrusel-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
 
-                    <div class="proyecto-card">
-                        <div class="proyecto-header">
-                            <h4>Proyecto Plata</h4>
-                            <span class="proyecto-badge">Activo</span>
+                <!-- SALA DE PROYECTOS -->
+                <div class="sala-proyectos">
+                    <h2>Sala De Proyectos</h2>
+                    <div class="proyecto-inversion">
+                        <div class="proyecto-card">
+                            <h3>Proyecto Minería Principal</h3>
+                            <div class="info-proyecto">
+                                <div class="info-item">
+                                    <span class="label">Inversión Mínima</span>
+                                    <span class="valor">50 USDT</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Ganancia en 31 días</span>
+                                    <span class="valor">50 USDT</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Comisión Referral</span>
+                                    <span class="valor">5%</span>
+                                </div>
+                            </div>
+                            <button class="btn-invertir" data-proyecto="1">Invertir Ahora</button>
                         </div>
-                        <div class="proyecto-info">
-                            <div class="info-row">
-                                <span class="label">Inversión Mínima:</span>
-                                <span class="value">500 USDT</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Ganancia Esperada:</span>
-                                <span class="value gain">+20%</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Duración:</span>
-                                <span class="value">60 días</span>
-                            </div>
-                        </div>
-                        <button class="btn-invertir" onclick="invertir('Plata', 500)">Invertir Ahora</button>
-                    </div>
-
-                    <div class="proyecto-card">
-                        <div class="proyecto-header">
-                            <h4>Proyecto Diamante</h4>
-                            <span class="proyecto-badge">Activo</span>
-                        </div>
-                        <div class="proyecto-info">
-                            <div class="info-row">
-                                <span class="label">Inversión Mínima:</span>
-                                <span class="value">1000 USDT</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Ganancia Esperada:</span>
-                                <span class="value gain">+25%</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Duración:</span>
-                                <span class="value">90 días</span>
-                            </div>
-                        </div>
-                        <button class="btn-invertir" onclick="invertir('Diamante', 1000)">Invertir Ahora</button>
-                    </div>
-
-                    <div class="proyecto-card">
-                        <div class="proyecto-header">
-                            <h4>Proyecto Platino</h4>
-                            <span class="proyecto-badge">Activo</span>
-                        </div>
-                        <div class="proyecto-info">
-                            <div class="info-row">
-                                <span class="label">Inversión Mínima:</span>
-                                <span class="value">5000 USDT</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Ganancia Esperada:</span>
-                                <span class="value gain">+30%</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Duración:</span>
-                                <span class="value">120 días</span>
-                            </div>
-                        </div>
-                        <button class="btn-invertir" onclick="invertir('Platino', 5000)">Invertir Ahora</button>
                     </div>
                 </div>
             </section>
-        </main>
-    </div>
 
-    <!-- OTRAS PÁGINAS -->
-    <div id="proyectosPage" class="page">
-        <header class="header">
-            <div class="header-left">
-                <button class="back-btn" onclick="irAHogar()"><i class="fas fa-arrow-left"></i></button>
-                <h2 class="page-title">Proyectos</h2>
-            </div>
-        </header>
-        <main class="main-content">
-            <h3>Mis Proyectos Activos</h3>
-            <div class="proyectos-list" id="misProyectos"></div>
-        </main>
-    </div>
-
-    <div id="equipoPage" class="page">
-        <header class="header">
-            <div class="header-left">
-                <button class="back-btn" onclick="irAHogar()"><i class="fas fa-arrow-left"></i></button>
-                <h2 class="page-title">Equipo</h2>
-            </div>
-        </header>
-        <main class="main-content">
-            <h3>Mi Equipo de Referrals</h3>
-            <div class="equipo-list" id="miEquipo"></div>
-        </main>
-    </div>
-
-    <div id="amiPage" class="page">
-        <header class="header">
-            <div class="header-left">
-                <button class="back-btn" onclick="irAHogar()"><i class="fas fa-arrow-left"></i></button>
-                <h2 class="page-title">A Mi</h2>
-            </div>
-        </header>
-        <main class="main-content">
-            <div class="perfil-section">
-                <div class="perfil-header">
-                    <div class="avatar">
-                        <i class="fas fa-user-circle"></i>
+            <!-- SECCIÓN PROYECTO -->
+            <section id="seccion-proyecto" class="seccion-oculta">
+                <div class="proyecto-detalle">
+                    <h2>Mis Inversiones</h2>
+                    <div class="monto-generado">
+                        <span class="label">Monto Generado</span>
+                        <span id="monto-generado" class="valor">0.00 USDT</span>
                     </div>
+                    <div class="comision-diaria">
+                        <span class="label">Comisión Minería Diaria</span>
+                        <button id="btn-comision-diaria" class="btn-comision">Reclamar Comisión <span id="comision-monto">0.00</span> USDT</button>
+                    </div>
+                    <div class="inversiones-list">
+                        <h3>Mis Proyectos Activos</h3>
+                        <div id="lista-inversiones" class="lista-vacia">
+                            <p>No tienes inversiones activas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN EQUIPO -->
+            <section id="seccion-equipo" class="seccion-oculta">
+                <div class="equipo-content">
+                    <h2>Mi Equipo</h2>
+                    <div class="estadisticas-equipo">
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <span class="stat-label">Referidos Directos</span>
+                            <span class="stat-valor">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-sitemap"></i>
+                            <span class="stat-label">Red Total</span>
+                            <span class="stat-valor">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-coins"></i>
+                            <span class="stat-label">Ganancias por Referidos</span>
+                            <span class="stat-valor">0.00 USDT</span>
+                        </div>
+                    </div>
+                    <div class="lista-referidos">
+                        <h3>Mis Referidos</h3>
+                        <div id="lista-referidos" class="lista-vacia">
+                            <p>Aún no tienes referidos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN A MI -->
+            <section id="seccion-ami" class="seccion-oculta">
+                <div class="perfil-usuario">
+                    <h2>Mi Perfil</h2>
                     <div class="perfil-info">
-                        <h3 id="nombrePerfil">Usuario</h3>
-                        <p id="documentoPerfil">Doc: 12345678</p>
+                        <div class="info-card">
+                            <label>Documento</label>
+                            <p id="perfil-documento">-</p>
+                        </div>
+                        <div class="info-card">
+                            <label>Nombre Completo</label>
+                            <p id="perfil-nombre">-</p>
+                        </div>
+                        <div class="info-card">
+                            <label>Correo</label>
+                            <p id="perfil-correo">-</p>
+                        </div>
+                        <div class="info-card">
+                            <label>Teléfono</label>
+                            <p id="perfil-telefono">-</p>
+                        </div>
+                        <div class="info-card">
+                            <label>Fecha de Registro</label>
+                            <p id="perfil-fecha">-</p>
+                        </div>
                     </div>
+                    <button id="btn-logout" class="btn-logout">Cerrar Sesión</button>
                 </div>
-
-                <div class="perfil-options">
-                    <div class="option-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <p class="option-label">Correo</p>
-                            <p class="option-value" id="correoPerfil">email@example.com</p>
-                        </div>
-                    </div>
-                    <div class="option-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <p class="option-label">Teléfono</p>
-                            <p class="option-value" id="telefonoPerfil">+1 234 567 8900</p>
-                        </div>
-                    </div>
-                    <div class="option-item">
-                        <i class="fas fa-wallet"></i>
-                        <div>
-                            <p class="option-label">Saldo Total</p>
-                            <p class="option-value" id="saldoPerfil">0.00 USDT</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
-            </div>
+            </section>
         </main>
-    </div>
 
-    <!-- MODALES -->
-    <div id="recargaModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="cerrarModal('recargaModal')">&times;</button>
-            <h3>Recarga de Fondos</h3>
-            <p class="info-text">Envía fondos a la siguiente dirección:</p>
-            <div class="direccion-box">
-                <p id="direccionRecarga">1A1z7agoat4d9HUVhSbi2XGshnrwy5z1G</p>
-                <button class="btn-copiar" onclick="copiarDireccion()">
-                    <i class="fas fa-copy"></i> Copiar
-                </button>
-            </div>
-            <div class="warning-box">
-                <i class="fas fa-info-circle"></i>
-                <p>Los fondos se acreditarán en tu cuenta después de 3 confirmaciones en la blockchain.</p>
-            </div>
-        </div>
-    </div>
+        <!-- NAVEGACIÓN INFERIOR -->
+        <nav class="nav-bottom">
+            <button class="nav-item active" data-nav="hogar">
+                <i class="fas fa-home"></i>
+                <span>Hogar</span>
+            </button>
+            <button class="nav-item" data-nav="proyecto">
+                <i class="fas fa-project-diagram"></i>
+                <span>Proyecto</span>
+            </button>
+            <button class="nav-item" data-nav="equipo">
+                <i class="fas fa-users"></i>
+                <span>Equipo</span>
+            </button>
+            <button class="nav-item" data-nav="ami">
+                <i class="fas fa-user"></i>
+                <span>A mi</span>
+            </button>
+        </nav>
 
-    <div id="retirarModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="cerrarModal('retirarModal')">&times;</button>
-            <h3>Retirar Fondos</h3>
-            <form id="retirarForm">
-                <div class="form-group">
-                    <label for="codigoRetiro">Código de Registro</label>
-                    <input type="password" id="codigoRetiro" placeholder="Ingresa tu código" required>
+        <!-- MODALES -->
+        <!-- MODAL RECARGA -->
+        <div id="modal-recarga" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Cargar Fondos</h2>
+                <div class="recarga-content">
+                    <p class="instruccion">Envía fondos a la siguiente dirección de billetera:</p>
+                    <div class="direccion-wallet">
+                        <code id="direccion-recarga">0x742d35Cc6634C0532925a3b844Bc9e7595f42e1</code>
+                        <button class="btn-copiar" onclick="copiarTexto('direccion-recarga')">
+                            <i class="fas fa-copy"></i> Copiar
+                        </button>
+                    </div>
+                    <p class="red-info">Red: Binance Smart Chain (BSC)</p>
+                    <p class="advertencia">⚠️ Asegúrate de enviar desde una billetera que controles</p>
                 </div>
-                <div class="form-group">
-                    <label for="montoRetiro">Monto a Retirar</label>
-                    <input type="number" id="montoRetiro" placeholder="USDT" min="10" required>
-                </div>
-                <div class="form-group">
-                    <label for="direccionRetiro">Dirección de Billetera</label>
-                    <input type="text" id="direccionRetiro" placeholder="Dirección de billetera" required>
-                </div>
-                <button type="submit" class="btn-primary">Solicitar Retiro</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="referralModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="cerrarModal('referralModal')">&times;</button>
-            <h3>Invitar Amigos</h3>
-            <p class="info-text">Comparte tu código de referral:</p>
-            <div class="codigo-box">
-                <p id="codigoReferral">REF-ABC123XYZ</p>
-                <button class="btn-copiar" onclick="copiarReferral()">
-                    <i class="fas fa-copy"></i> Copiar Código
-                </button>
-            </div>
-            <p class="bonus-text">Gana <strong>10% de comisión</strong> por cada amigo que se registre con tu código.</p>
-        </div>
-    </div>
-
-    <div id="empresaModal" class="modal">
-        <div class="modal-content modal-large">
-            <button class="close-btn" onclick="cerrarModal('empresaModal')">&times;</button>
-            <h3>Perfil de la Empresa</h3>
-            <div class="empresa-info">
-                <h4>Minevertex</h4>
-                <p><strong>Descripción:</strong> Plataforma de inversión digital descentralizada con enfoque en seguridad y ganancias sostenibles.</p>
-                
-                <h5>Nuestra Misión</h5>
-                <p>Proporcionar oportunidades de inversión seguras y rentables para usuarios de todo el mundo a través de tecnología blockchain.</p>
-
-                <h5>Contacto</h5>
-                <ul>
-                    <li>📧 Email: info@minevertex.com</li>
-                    <li>🌐 Web: www.minevertex.com</li>
-                    <li>📞 Soporte: +1-800-MINVERTEX</li>
-                </ul>
-
-                <h5>Certificaciones</h5>
-                <ul>
-                    <li>✓ Registrado en blockchain</li>
-                    <li>✓ Auditoría de seguridad completada</li>
-                    <li>✓ Cumple normativas internacionales</li>
-                </ul>
             </div>
         </div>
+
+        <!-- MODAL RETIRAR -->
+        <div id="modal-retirar" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Retirar Fondos</h2>
+                <div class="retirar-content">
+                    <div class="form-group">
+                        <label for="cantidad-retiro">Cantidad a Retirar (USDT)</label>
+                        <input type="number" id="cantidad-retiro" min="10" max="1000" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="wallet-retiro">Dirección de Billetera</label>
+                        <input type="text" id="wallet-retiro" placeholder="0x...">
+                    </div>
+                    <button class="btn-retirar">Solicitar Retiro</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL APLICACIÓN -->
+        <div id="modal-aplicacion" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Descargar Aplicación</h2>
+                <div class="aplicacion-content">
+                    <p>Guarda esta página como aplicación en tu dispositivo</p>
+                    <button class="btn-instalar-app">
+                        <i class="fas fa-download"></i> Instalar Aplicación
+                    </button>
+                    <p class="info-app">Acceso rápido desde tu pantalla de inicio</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PERFIL EMPRESA -->
+        <div id="modal-perfil-empresa" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Perfil de la Empresa</h2>
+                <div class="perfil-empresa-content">
+                    <div class="empresa-info">
+                        <h3>MINERVERTEX</h3>
+                        <p><strong>Misión:</strong> Proporcionar oportunidades de minería digital accesibles y seguras para todos nuestros usuarios.</p>
+                        <p><strong>Visión:</strong> Ser la plataforma líder en minería digital con tecnología blockchain segura.</p>
+                        <p><strong>Fundación:</strong> 2024</p>
+                        <p><strong>Red:</strong> Binance Smart Chain (BSC)</p>
+                    </div>
+                    <div class="empresa-contacto">
+                        <h4>Contacto</h4>
+                        <p><i class="fas fa-envelope"></i> info@minervertex.com</p>
+                        <p><i class="fas fa-phone"></i> +1234567890</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL INVITAR AMIGOS -->
+        <div id="modal-invitar" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Invitar Amigos</h2>
+                <div class="invitar-content">
+                    <p>Comparte tu código de referencia y gana 5% de comisión</p>
+                    <div class="codigo-referencia">
+                        <div class="codigo-display">
+                            <code id="codigo-referencia">REF-</code>
+                            <button class="btn-copiar" onclick="copiarTexto('codigo-referencia')">
+                                <i class="fas fa-copy"></i> Copiar Código
+                            </button>
+                        </div>
+                    </div>
+                    <div class="enlace-referencia">
+                        <input type="text" id="enlace-referencia" readonly>
+                        <button class="btn-copiar" onclick="copiarTexto('enlace-referencia')">
+                            <i class="fas fa-copy"></i> Copiar Enlace
+                        </button>
+                    </div>
+                    <p class="info-referencia">Comparte este enlace con tus amigos y ambos recibirán bonificaciones</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL COOPERACIÓN -->
+        <div id="modal-cooperacion" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Cooperación Entre Agencias</h2>
+                <div class="cooperacion-content">
+                    <p>Únete a nuestra red de cooperación global</p>
+                    <div class="beneficios-cooperacion">
+                        <div class="beneficio-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Alcance Global</h4>
+                            <p>Conecta con socios en todo el mundo</p>
+                        </div>
+                        <div class="beneficio-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Crecimiento Mutuo</h4>
+                            <p>Aumenta tus ganancias colaborando</p>
+                        </div>
+                        <div class="beneficio-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Seguro</h4>
+                            <p>Transacciones verificadas y seguras</p>
+                        </div>
+                    </div>
+                    <button class="btn-solicitar-cooperacion">Solicitar Cooperación</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL INVERTIR -->
+        <div id="modal-invertir" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Realizar Inversión</h2>
+                <div class="invertir-content">
+                    <div class="form-group">
+                        <label for="cantidad-inversion">Cantidad a Invertir (USDT)</label>
+                        <input type="number" id="cantidad-inversion" min="50" step="10" value="50">
+                        <small>Mínimo 50 USDT</small>
+                    </div>
+                    <div class="resumen-inversion">
+                        <div class="resumen-item">
+                            <span>Inversión</span>
+                            <span id="resumen-inversion">50.00 USDT</span>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Ganancia Estimada (31 días)</span>
+                            <span id="resumen-ganancia">50.00 USDT</span>
+                        </div>
+                        <div class="resumen-item total">
+                            <span>Total a Recibir</span>
+                            <span id="resumen-total">100.00 USDT</span>
+                        </div>
+                    </div>
+                    <button class="btn-confirmar-inversion">Confirmar Inversión</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- NAVEGACIÓN INFERIOR -->
-    <nav class="bottom-nav">
-        <button class="nav-btn active" onclick="irAHogar()">
-            <i class="fas fa-home"></i>
-            <span>Hogar</span>
-        </button>
-        <button class="nav-btn" onclick="irAProyectos()">
-            <i class="fas fa-chart-line"></i>
-            <span>Proyectos</span>
-        </button>
-        <button class="nav-btn" onclick="irAEquipo()">
-            <i class="fas fa-users"></i>
-            <span>Equipo</span>
-        </button>
-        <button class="nav-btn" onclick="irAAmi()">
-            <i class="fas fa-user"></i>
-            <span>A Mi</span>
-        </button>
-    </nav>
-
-    <script src="script.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/carrusel.js"></script>
 </body>
 </html>
